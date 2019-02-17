@@ -1,20 +1,74 @@
 ##Unviersidad del Valle de Guatmemala
 ##Inteligencia Artificial
 ##Autor: Michelle Bloomfield Fong 16803
+from conversiones import matrix
 
+##Estado inicial
 entrada = input("Ingrese los numeros de el juego:\n")
+x = matrix(entrada)
+print(x)
 
-l1 = entrada[0] +" "+ entrada[1] +" "+ entrada[2] +" "+ entrada[3]
-linea1 = l1.split()
-l2 = entrada[4] +" "+ entrada[5] +" "+ entrada[6] +" "+ entrada[7]
-linea2 = l2.split()
-l3 = entrada[8] +" "+ entrada[9] +" "+ entrada[10] +" "+ entrada[11]
-linea3 = l3.split()
-l4 = entrada[12] +" "+ entrada[13] +" "+ entrada[14] +" "+ entrada[15]
-linea4= l4.split()
+##Defini la lista ganadora y se compara
+def goalTest(s):
+        ganador = [['1','2','3','4'], ['5','6','7','8'], ['9','A','B','C'],['D','E','F','.']]
+        if s == ganador:
+            return True
+        else:
+            return False
 
+##Acciones posibles que se puden realizar     
+def actions(s):
+    nueva = s
+    cambios = []
+    
+    for x in range(4):
+        for y in range(4):
+            if s[x][y] == ".":
+                pos =[x,y]
+                print(pos)
+   
+##Si la posicion en x no es la ultima fila el punto bajara           
+    if pos[0]+1 <= 3:
+        nueva[pos[0]][pos[1]] = s[pos[0]+1][pos[1]]
+        nueva[pos[0]+1][pos[1]] = '.'
+        cambios.append(nueva)
+        return print(nueva)
+    
+##Si la posicion x no es la primera fila el punto subira
+    if pos[0] - 1 >= 0:
+        nueva[pos[0]][pos[1]] = s[pos[0]-1][pos[1]]
+        nueva[pos[0]-1][pos[1]] = '.'
+        cambios.append(nueva)
+        return print(nueva)
+    
+##Si la posicion en x no es la ultima entonces se mueve hacia la derecha
+    if pos[1]+1 <=3:
+        nueva[pos[0]][pos[1]] = s[pos[0]][pos[1]+1]
+        nueva[pos[0]][pos[1]+1] = '.'
+        cambios.append(nueva)
+        return print(nueva)
+    
+##Si la posicion x no es la primera se mueve hacia la izquierda
+    if pos[1]-1 <=0:
+        nueva[pos[0]][pos[1]] = s[pos[0]][pos[1]-1]
+        nueva[pos[0]][pos[1]-1] = '.'
+        cambios.append(nueva)
+        return print(nueva)
+    
 
-print(linea1);
-print(linea2);
-print(linea3);
-print(linea4);
+def pathCoast():
+    return
+
+##Heuristica que nos indica cuantas filas y columnas estan bien
+def heuristica(matriz):
+    lugar = 16
+    comparacion = 1
+    matriz[3][3] = '16'
+    
+    for i in range(4):
+        for j in range(4): 
+            if matriz[i][j] == str(comparacion):
+                lugar -=1
+            comparacion += 1
+    return lugar
+
