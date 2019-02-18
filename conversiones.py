@@ -31,20 +31,29 @@ def matrix(entrada):
         print("INVALIDO")
 
 
-def cuadrantes(entrada):
-    if len(entrada) == 16:
-        c1 = entrada[0] +" "+ entrada[1] +" "+ entrada[4] +" "+ entrada[5]
-        cuadro1 = c1.split()
-        c2 = entrada[2] +" "+ entrada[3] +" "+ entrada[6] +" "+ entrada[7]
-        cuadro2 = c2.split()
-        c3 = entrada[9] +" "+ entrada[9] +" "+ entrada[12] +" "+ entrada[13]
-        cuadro3 = c3.split()
-        c4 = entrada[10] +" "+ entrada[11] +" "+ entrada[14] +" "+ entrada[15]
-    else: 
-        print("INVALIDO")
-        
-
+def cuadros(entrada):
+    c1 = entrada[0][0] +" "+ entrada[1][0] +" "+ entrada[0][1] +" "+ entrada[1][1]
+    cuadro1 = c1.split()
+    c2 = entrada[0][2] +" "+ entrada[0][3] +" "+ entrada[1][2]+" "+ entrada[1][3]
+    cuadro2 = c2.split()
+    c3 = entrada[2][0] +" "+ entrada[2][1] +" "+ entrada[3][0] +" "+ entrada[3][1]
+    cuadro3 = c3.split()
+    c4 = entrada[2][2] +" "+ entrada[2][3] +" "+ entrada[3][2] +" "+ entrada[3][3]
+    cuadro4 = c4.split()
+    return [cuadro1,cuadro2,cuadro3,cuadro4]
                 
+
+
+def linea(entrada):
+    c1 = entrada[0][0] +" "+ entrada[1][0] +" "+ entrada[2][0] +" "+ entrada[3][0]
+    cuadro1 = c1.split()
+    c2 = entrada[0][1] +" "+ entrada[1][1] +" "+ entrada[2][1]+" "+ entrada[3][1]
+    cuadro2 = c2.split()
+    c3 = entrada[0][2] +" "+ entrada[1][2] +" "+ entrada[2][3] +" "+ entrada[3][2]
+    cuadro3 = c3.split()
+    c4 = entrada[0][3] +" "+ entrada[1][3] +" "+ entrada[2][3] +" "+ entrada[3][3]
+    cuadro4 = c4.split()
+    return [cuadro1,cuadro2,cuadro3,cuadro4]
                 
             
                 
