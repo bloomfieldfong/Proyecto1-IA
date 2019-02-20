@@ -24,7 +24,7 @@ def actions(s):
     for x in range(4):
         for y in range(4):
             if s[x][y] == ".":
-                pos =[x,y]
+                pos = [x,y]
                 print(pos)
    
 ##Si la posicion en x no es la ultima fila el punto bajara           
@@ -42,7 +42,7 @@ def actions(s):
         return print(nueva)
     
 ##Si la posicion en x no es la ultima entonces se mueve hacia la derecha
-    if pos[1]+1 <=3:
+    if pos[1] + 1 <=3:
         nueva[pos[0]][pos[1]] = s[pos[0]][pos[1]+1]
         nueva[pos[0]][pos[1]+1] = '.'
         cambios.append(nueva)

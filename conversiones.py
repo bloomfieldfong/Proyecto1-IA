@@ -1,4 +1,6 @@
-        
+##Unviersidad del Valle de Guatmemala
+##Inteligencia Artificial
+##Autor: Michelle Bloomfield Fong 16803      
 def conversion(x):
     for i in range(4):
         for j in range(0,4):
@@ -56,4 +58,25 @@ def linea(entrada):
     return [cuadro1,cuadro2,cuadro3,cuadro4]
                 
             
-                
+          
+def verificarFila(entrada, x):
+    for n in range(4):
+        if entrada[n] == str(x):
+            return False
+        else:
+            return True
+
+        
+def verificarColumna(entrada, x):
+    for n in range(4):
+        if entrada[n] == str(x):
+            return False
+        else:
+            return True
+    
+def verificarCuadro(entrada, x):
+    for n in range(4):
+        if entrada[n] == str(x):
+            return False
+        else:
+            return True
