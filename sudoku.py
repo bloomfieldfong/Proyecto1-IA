@@ -206,10 +206,12 @@ class sudoku:
                     if new[x][y] == ".":
                         a+=1;
             return a
+
     
     def criteria(self, frontera):
         for path in frontera:
             z = heuristica(path) + pathCoast(path)
+            ##REGRESE EL PATH QUE TENGA EL BELLO Z MAS PEQUEÑO 
         return z
       
 

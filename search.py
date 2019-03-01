@@ -3,7 +3,6 @@
 ##Autor: Michelle Bloomfield Fong 16803
 
 
-
 def graph_search(problem):
   
     frontier = []
@@ -21,6 +20,7 @@ def graph_search(problem):
             path = problem.criteria(frontier)
             s = path[len(path)-1]
             explored.append(s)
+            
             ##Si gano nos retorna la ruta tomada   
             if problem.goaltest(s):
                 return path
@@ -29,6 +29,11 @@ def graph_search(problem):
                 result = problem.results(s,a)
               
             if result not in explored:
+            
+#                new_path = Path([])
+#                new_path.extendFrom(path)
+#                new_path.addStep(problem.result)
+#                frontier.append(new_path)
                 
                 
             

@@ -60,8 +60,10 @@ class fifteen_puzle:
             return print(nueva)
         
 
-    def results():
-        return
+    def results(self,s, a):
+        s_nueva = 0
+        return s_nueva
+
     def stepCoast():
         return 
     def pathCoast():
